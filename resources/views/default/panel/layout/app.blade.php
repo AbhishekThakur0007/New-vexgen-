@@ -344,11 +344,19 @@
 
             /* Search Results Dropdown */
             body[data-theme="marketing-bot-dashboard"] .header-search-results,
-            body[data-theme="marketing-bot-dashboard"] .lqd-dropdown-dropdown-content {
+            body[data-theme="marketing-bot-dashboard"] .lqd-dropdown-dropdown-content,
+            body[data-theme="marketing-bot-dashboard"] .bg-dropdown-background,
+            body[data-theme="marketing-bot-dashboard"] .lqd-dropdown-dropdown-content.bg-dropdown-background {
                 background: linear-gradient(135deg, rgba(10, 14, 39, 0.98) 0%, rgba(26, 29, 58, 0.98) 50%, rgba(15, 23, 41, 0.98) 100%) !important;
                 border: 1px solid rgba(0, 212, 255, 0.3) !important;
                 backdrop-filter: blur(20px) saturate(180%) !important;
-                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 212, 255, 0.2) !important;
+                -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+                box-shadow: 
+                    0 8px 32px rgba(0, 0, 0, 0.5),
+                    0 0 0 1px rgba(0, 212, 255, 0.2),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+                    0 0 40px rgba(0, 212, 255, 0.2),
+                    0 0 80px rgba(123, 47, 247, 0.15) !important;
             }
         </style>
     @endpush
