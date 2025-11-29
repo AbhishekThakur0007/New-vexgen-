@@ -31,3 +31,56 @@
 		}
 	}
 }
+
+/* bg-input-background styling with theme effects - using attribute selector to avoid circular dependency */
+.theme-dark [class*="bg-input-background"] {
+	position: relative;
+	background: linear-gradient(135deg, 
+		rgba(12, 18, 40, 0.95) 0%, 
+		rgba(18, 26, 50, 0.9) 50%, 
+		rgba(12, 18, 40, 0.95) 100%) !important;
+	border: 1px solid rgba(123, 47, 247, 0.25) !important;
+	box-shadow: 
+		0 0 15px rgba(123, 47, 247, 0.1),
+		inset 0 0 15px rgba(0, 212, 255, 0.03),
+		0 4px 20px rgba(3, 8, 22, 0.3) !important;
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+	transition: all 0.3s ease;
+}
+
+.theme-dark [class*="bg-input-background"]::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	border-radius: inherit;
+	background: radial-gradient(
+		circle at 25% 25%, 
+		rgba(123, 47, 247, 0.08) 0%, 
+		transparent 55%
+	);
+	pointer-events: none;
+	opacity: 0.5;
+	z-index: 0;
+}
+
+.theme-dark [class*="bg-input-background"]:hover {
+	border-color: rgba(123, 47, 247, 0.4) !important;
+	box-shadow: 
+		0 0 20px rgba(123, 47, 247, 0.15),
+		inset 0 0 20px rgba(0, 212, 255, 0.05),
+		0 6px 25px rgba(3, 8, 22, 0.4) !important;
+}
+
+.theme-dark [class*="bg-input-background"]:focus-within {
+	border-color: rgba(123, 47, 247, 0.5) !important;
+	box-shadow: 
+		0 0 25px rgba(123, 47, 247, 0.2),
+		inset 0 0 25px rgba(0, 212, 255, 0.08),
+		0 8px 30px rgba(3, 8, 22, 0.5) !important;
+}
+
+.theme-dark [class*="bg-input-background"] > * {
+	position: relative;
+	z-index: 1;
+}

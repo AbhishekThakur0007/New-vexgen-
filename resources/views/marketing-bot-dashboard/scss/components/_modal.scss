@@ -4,12 +4,16 @@
 }
 
 .lqd-modal-modal {
+	/* Use the same surface color as dashboard cards for the modal */
+	--surface-background: var(--card-background);
 	--input-background: 90 8% 95%;
 }
 
 .theme-dark {
 
 	.lqd-modal-modal {
-		--input-background: 0 0% 27%;
+		/* Match dark theme card background as well */
+		--surface-background: var(--card-background);
+		--input-background: 220 30% 18%;
 	}
 }
